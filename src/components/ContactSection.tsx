@@ -1,9 +1,20 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Instagram, Linkedin, Copy, X } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { useState } from 'react';
+import { toast } from '@/components/ui/sonner';
 
 export function ContactSection() {
+  const [isEmailOpen, setIsEmailOpen] = useState(false);
+  
+  const copyEmail = () => {
+    navigator.clipboard.writeText('colenielson6@gmail.com');
+    toast.success('Email copied to clipboard');
+    setIsEmailOpen(false);
+  };
+
   return (
     <section id="contact" className="section">
       <div className="container-custom">
@@ -20,9 +31,33 @@ export function ContactSection() {
             title="Email"
             description="Drop me a line anytime"
             action={
-              <Button variant="outline" asChild>
-                <a href="mailto:cole@example.com">Send Email</a>
-              </Button>
+              <Popover open={isEmailOpen} onOpenChange={setIsEmailOpen}>
+                <PopoverTrigger asChild>
+                  <Button variant="outline">Send Email</Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-72 p-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="font-medium text-sm">My Email Address</h4>
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="h-6 w-6" 
+                      onClick={() => setIsEmailOpen(false)}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2">
+                    <code className="p-2 rounded bg-muted flex-grow">
+                      colenielson6@gmail.com
+                    </code>
+                    <Button variant="outline" size="icon" onClick={copyEmail}>
+                      <Copy className="h-4 w-4" />
+                      <span className="sr-only">Copy email address</span>
+                    </Button>
+                  </div>
+                </PopoverContent>
+              </Popover>
             }
           />
           
@@ -81,3 +116,4 @@ function ContactCard({
     </Card>
   );
 }
+

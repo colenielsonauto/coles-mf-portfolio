@@ -7,6 +7,8 @@ import { toast } from "@/components/ui/sonner";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 
 interface ProjectContactModalProps {
   projectTitle: string;
@@ -51,6 +53,16 @@ export function ProjectContactModal({ projectTitle, isOpen, onClose }: ProjectCo
   return (
     <AlertDialog open={isOpen} onOpenChange={onClose}>
       <AlertDialogContent className="sm:max-w-[425px]">
+        <Button
+          className="absolute right-4 top-4 h-8 w-8 p-0"
+          variant="ghost"
+          size="icon"
+          onClick={onClose}
+        >
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </Button>
+        
         <AlertDialogHeader>
           <AlertDialogTitle>Interest in {projectTitle}</AlertDialogTitle>
         </AlertDialogHeader>
