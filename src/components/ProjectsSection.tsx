@@ -13,11 +13,11 @@ const projects: ProjectProps[] = [
     link: "https://youraigarden.com"
   },
   {
-    title: "n8n Real Estate Website Bot",
+    title: "Automation and Application Integrations",
     description: "Automated lead capture for real estate",
     longDescription: "An automated system that handles real-time communication about agents and listings, captures contact details, and notifies agents instantly via SMS.",
     tags: ["n8n", "Automation", "Google Sheets API", "SMS Integration", "Lead Generation"],
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1000&q=80",
+    image: "/lovable-uploads/75babce0-9875-4199-aa69-5c9477d273b0.png",
     showContactModal: true
   },
   {
