@@ -11,7 +11,7 @@ export function AboutSection() {
             <div className="relative">
               <div className="aspect-square overflow-hidden rounded-lg border border-border shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=600&q=80" 
+                  src="public/lovable-uploads/06d278a0-87a7-497e-abed-55148442fbf0.png" 
                   alt="Cole Nielson"
                   className="w-full h-full object-cover"
                 />
