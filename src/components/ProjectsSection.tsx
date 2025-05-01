@@ -25,7 +25,7 @@ const projects: ProjectProps[] = [
     description: "Convert human questions into SQL queries",
     longDescription: "A system that converts a 33M-token dataset into a searchable SQL database connected to an LLM, allowing users to ask natural language questions.",
     tags: ["SQL", "PostgreSQL", "LLM Integration", "Natural Language Processing", "Data Engineering"],
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=80",
+    image: "/lovable-uploads/2f6d7c5d-0c07-48c4-8245-cdcb384c1ad4.png",
     showContactModal: true
   },
   {
