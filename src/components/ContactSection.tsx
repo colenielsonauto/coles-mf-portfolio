@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, GitHub, User } from 'lucide-react';
+import { Mail, Github, User } from 'lucide-react';
 
 export function ContactSection() {
   return (
@@ -27,7 +27,7 @@ export function ContactSection() {
           />
           
           <ContactCard 
-            icon={<GitHub className="h-8 w-8" />}
+            icon={<Github className="h-8 w-8" />}
             title="GitHub"
             description="Check out my code"
             action={
