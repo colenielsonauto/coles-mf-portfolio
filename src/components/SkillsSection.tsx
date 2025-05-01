@@ -31,7 +31,7 @@ const skillCategories: SkillCategory[] = [
   {
     name: "Tools & Platforms",
     skills: [
-      "Terminal", "Cursor IDE", "Vercel", "Google Sheets API", "n8n automations",
+      "Terminal", "Cursor IDE", "Vercel", "Google Workspace Integrations", "n8n automations",
       "Codex CLI", "OpenAI CLI", "Stripe Integration"
     ]
   }
