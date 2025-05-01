@@ -11,9 +11,15 @@ export interface ProjectProps {
   tags: string[];
   image?: string;
   link?: string;
+  showContactModal?: boolean;
 }
 
-export function ProjectCard({ project }: { project: ProjectProps }) {
+interface ProjectCardProps {
+  project: ProjectProps;
+  onContactRequest?: () => void;
+}
+
+export function ProjectCard({ project, onContactRequest }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg hover:border-accent/50 h-full flex flex-col">
       {project.image && (
@@ -47,9 +53,14 @@ export function ProjectCard({ project }: { project: ProjectProps }) {
         {project.link ? (
           <Button variant="ghost" asChild className="group">
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              View Project
+              Try Now
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
+          </Button>
+        ) : project.showContactModal && onContactRequest ? (
+          <Button variant="ghost" className="group" onClick={onContactRequest}>
+            Learn More
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         ) : (
           <span className="text-sm text-muted-foreground">Coming soon</span>
