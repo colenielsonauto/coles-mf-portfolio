@@ -37,21 +37,7 @@ export function AboutSection() {
               <p>
                 My mission is to help small businesses and professionals leverage AI tools through automation and custom AI integrations. I believe that the future belongs to those who can effectively harness AI's capabilities, and I'm dedicated to making these technologies accessible to everyone.
               </p>
-              
-              <blockquote className="border-l-4 border-accent pl-4 italic">
-                <p>
-                  "What if ChatGPT, Gemini, Claude, and Grok lived in one place? I built it."
-                </p>
-              </blockquote>
             </div>
-            
-            <Card className="mt-8 bg-accent/5 border-accent/20">
-              <CardContent className="pt-6">
-                <p>
-                  This semester, I launched AI Garden — a platform where you can chat with all the top LLMs in one clean, unified interface. Through this project, I learned how to stream LLM responses efficiently, secure backend API calls, and think like a product developer, not just a student.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
