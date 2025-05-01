@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Github, User } from 'lucide-react';
+import { Mail, Instagram, Linkedin } from 'lucide-react';
 
 export function ContactSection() {
   return (
@@ -27,25 +27,25 @@ export function ContactSection() {
           />
           
           <ContactCard 
-            icon={<Github className="h-8 w-8" />}
-            title="GitHub"
-            description="Check out my code"
+            icon={<Instagram className="h-8 w-8" />}
+            title="Instagram"
+            description="Follow my AI journey"
             action={
               <Button variant="outline" asChild>
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                  View GitHub
+                <a href="https://www.instagram.com/colenielson.ai" target="_blank" rel="noopener noreferrer">
+                  Follow Me
                 </a>
               </Button>
             }
           />
           
           <ContactCard 
-            icon={<User className="h-8 w-8" />}
+            icon={<Linkedin className="h-8 w-8" />}
             title="Let's Connect"
             description="For collaborations and projects"
             action={
               <Button variant="outline" asChild>
-                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/cole-nielson-b05724196/" target="_blank" rel="noopener noreferrer">
                   LinkedIn
                 </a>
               </Button>
