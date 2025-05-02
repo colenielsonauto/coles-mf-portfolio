@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 
 export function AboutSection() {
@@ -11,7 +10,7 @@ export function AboutSection() {
             <div className="relative">
               <div className="aspect-square overflow-hidden rounded-lg border border-border shadow-lg">
                 <img 
-                  src="public/lovable-uploads/06d278a0-87a7-497e-abed-55148442fbf0.png" 
+                  src="/lovable-uploads/06d278a0-87a7-497e-abed-55148442fbf0.png" 
                   alt="Cole Nielson"
                   className="w-full h-full object-cover"
                 />
