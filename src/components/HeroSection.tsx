@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
@@ -10,13 +9,14 @@ export function HeroSection() {
           <h1 className="heading-xl">
             Cole Nielson
             <span className="block text-accent mt-2">
-              AI & Web Developer
+              AI & Automation Enthusiast
             </span>
           </h1>
           
           <p className="text-xl text-muted-foreground">
-            From real estate professional to AI developer in less than a year.
-            Building intelligent tools that solve real-world problems.
+            Welcome to my portfolio. Here, I showcase the projects and skills 
+            developed on my journey into AI and web development. Feel free 
+            to explore my work.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
