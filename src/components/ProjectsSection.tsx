@@ -1,4 +1,3 @@
-
 import { ProjectCard, ProjectProps } from './ProjectCard';
 import { useState } from 'react';
 import { ProjectContactModal } from './ProjectContactModal';
@@ -48,7 +47,14 @@ export function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="section bg-muted/30">
+    <section 
+      id="projects" 
+      className="section bg-muted/30 pt-24 pb-16 md:pt-32 md:pb-24 relative"
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)',
+      }}
+    >
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="heading-lg">Featured Projects</h2>
