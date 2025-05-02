@@ -26,15 +26,15 @@ export function AboutSection() {
             
             <div className="space-y-4 text-lg">
               <p>
-                I'm Cole Nielson, based in Boise, Idaho—a real estate professional and Boise State University student graduating in December 2025.
+                I’m Cole, a self-taught AI and automation enthusiast passionate about building projects that showcase the real-world potential of these technologies. My interest in AI began with the launch of ChatGPT in November 2022, but in February 2025, I decided to pursue this passion professionally.
               </p>
               
               <p>
-                My journey into coding and AI began in March 2025 with absolutely no prior experience. In less than a year, I've gone from complete beginner to building complex AI systems and web applications that solve real-world problems.
+                Since then, I’ve rapidly developed practical skills in AI, automation, and web technologies, entirely through self-guided learning and hands-on experimentation. This portfolio highlights some of my recent projects and reflects my enthusiasm for continuous growth in this exciting and rapidly evolving field.
               </p>
               
               <p>
-                My mission is to help small businesses and professionals leverage AI tools through automation and custom AI integrations. I believe that the future belongs to those who can effectively harness AI's capabilities, and I'm dedicated to making these technologies accessible to everyone.
+                I’m actively seeking opportunities to collaborate, contribute, and further expand my skills and experience in AI and automation.
               </p>
             </div>
           </div>
