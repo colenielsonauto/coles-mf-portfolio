@@ -1,10 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16">
-      <div className="container-custom">
+    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      <BackgroundBeams />
+      <div className="container-custom relative z-10">
         <div className="max-w-3xl space-y-6 animate-fade-in">
           <h1 className="heading-xl">
             Cole Nielson
