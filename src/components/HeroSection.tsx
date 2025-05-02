@@ -34,10 +34,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-      
-      {/* Background elements */}
-      <div className="absolute top-1/3 right-0 w-1/3 h-1/3 bg-accent/5 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 left-20 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl"></div>
     </section>
   );
 }

@@ -127,7 +127,7 @@ export const BackgroundBeams = React.memo(
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(352 34) rotate(90) scale(555 1560.62)"
             >
-              {/* Light mode: gray-400 */}
+              {/* Light mode: gray-600 */}
               <stop offset="0.0666667" stopColor="#9ca3af" />
               <stop offset="0.243243" stopColor="#9ca3af" />
               <stop offset="0.43594" stopColor="#9ca3af" stopOpacity="0" />
