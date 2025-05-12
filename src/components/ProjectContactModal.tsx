@@ -1,14 +1,9 @@
-
 import { useState } from "react";
-import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { toast } from "@/components/ui/sonner";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+import { X, Mail, Copy, Instagram, Linkedin } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface ProjectContactModalProps {
   projectTitle: string;
@@ -16,43 +11,15 @@ interface ProjectContactModalProps {
   onClose: () => void;
 }
 
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z.string().optional(),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
 export function ProjectContactModal({ projectTitle, isOpen, onClose }: ProjectContactModalProps) {
-  const [submitting, setSubmitting] = useState(false);
-
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-    },
-  });
-
-  const onSubmit = (data: FormValues) => {
-    setSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", data);
-      toast.success("Thank you for your interest! I'll reach out to you personally as soon as I can.", {
-        duration: 5000,
-      });
-      setSubmitting(false);
-      onClose();
-    }, 1000);
+  const copyEmail = () => {
+    navigator.clipboard.writeText('colenielson6@gmail.com');
+    toast.success('Email copied to clipboard');
   };
 
   return (
     <AlertDialog open={isOpen} onOpenChange={onClose}>
-      <AlertDialogContent className="sm:max-w-[425px]">
+      <AlertDialogContent className="sm:max-w-sm">
         <Button
           className="absolute right-4 top-4 h-8 w-8 p-0"
           variant="ghost"
@@ -67,65 +34,70 @@ export function ProjectContactModal({ projectTitle, isOpen, onClose }: ProjectCo
           <AlertDialogTitle>Interest in {projectTitle}</AlertDialogTitle>
         </AlertDialogHeader>
         
-        <p className="mb-4 text-sm text-muted-foreground">
-          I'll reach out to you personally as soon as I can.
-        </p>
-        
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Your name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Your email address" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone Number (Optional)</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Your phone number" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
-            <AlertDialogFooter>
-              <AlertDialogAction 
-                type="submit" 
-                disabled={submitting}
-                className={submitting ? "opacity-70 cursor-not-allowed" : ""}
-              >
-                {submitting ? "Submitting..." : "Submit"}
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </form>
-        </Form>
+        <div className="py-4 space-y-4">
+          <p className="text-sm text-muted-foreground">
+            To discuss this project further, please message me via:
+          </p>
+          
+          <div className="flex items-center space-x-3">
+             <span className="font-medium text-sm flex-shrink-0">Email:</span>
+             <div className="flex items-center gap-2 bg-muted p-2 rounded flex-grow min-w-0">
+               <code className="text-sm truncate flex-grow">colenielson6@gmail.com</code>
+               <TooltipProvider delayDuration={0}>
+                 <Tooltip>
+                   <TooltipTrigger asChild>
+                     <Button 
+                       variant="ghost" 
+                       size="icon" 
+                       className="h-6 w-6 flex-shrink-0" 
+                       onClick={copyEmail}
+                     >
+                       <Copy className="h-4 w-4" />
+                       <span className="sr-only">Copy email address</span>
+                     </Button>
+                   </TooltipTrigger>
+                   <TooltipContent>
+                     <p>Copy email</p>
+                   </TooltipContent>
+                 </Tooltip>
+               </TooltipProvider>
+             </div>
+          </div>
+
+          <div className="flex items-center justify-center space-x-4 pt-2">
+            <TooltipProvider delayDuration={0}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" size="icon" asChild>
+                    <a href="https://www.instagram.com/colenielson.ai" target="_blank" rel="noopener noreferrer">
+                      <Instagram className="h-5 w-5" />
+                      <span className="sr-only">Instagram</span>
+                    </a>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Instagram</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider delayDuration={0}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" size="icon" asChild>
+                     <a href="https://www.linkedin.com/in/cole-nielson-b05724196/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>LinkedIn</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+        </div>
       </AlertDialogContent>
     </AlertDialog>
   );

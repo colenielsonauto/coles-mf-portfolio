@@ -1,3 +1,30 @@
+import React from 'react';
+
+const FooterNavLink = ({ href, children }: { href: string, children: React.ReactNode }) => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith('/#')) {
+      if (window.location.pathname === '/') {
+        event.preventDefault();
+        const targetId = href.substring(2);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+          window.history.pushState(null, '', href);
+        }
+      }
+    }
+  };
+
+  return (
+    <a 
+      href={href} 
+      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+      onClick={handleClick}
+    >
+      {children}
+    </a>
+  );
+};
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,18 +40,10 @@ export function Footer() {
           </div>
           
           <div className="flex space-x-6">
-            <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground">
-              Projects
-            </a>
-            <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground">
-              Skills
-            </a>
-            <a href="#about" className="text-sm text-muted-foreground hover:text-foreground">
-              About
-            </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground">
-              Contact
-            </a>
+            <FooterNavLink href="/#projects">Projects</FooterNavLink>
+            <FooterNavLink href="/#skills">Skills</FooterNavLink>
+            <FooterNavLink href="/#about">About</FooterNavLink>
+            <FooterNavLink href="/#contact">Contact</FooterNavLink>
           </div>
         </div>
       </div>

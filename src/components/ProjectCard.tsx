@@ -1,8 +1,8 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export interface ProjectProps {
   title: string;
@@ -12,6 +12,7 @@ export interface ProjectProps {
   image?: string;
   link?: string;
   showContactModal?: boolean;
+  buttonText?: string;
 }
 
 interface ProjectCardProps {
@@ -20,6 +21,9 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onContactRequest }: ProjectCardProps) {
+  const defaultButtonText = project.showContactModal ? "Learn More" : "Explore";
+  const buttonText = project.buttonText || defaultButtonText;
+
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg hover:border-accent/50 h-full flex flex-col">
       {project.image && (
@@ -51,15 +55,24 @@ export function ProjectCard({ project, onContactRequest }: ProjectCardProps) {
       
       <CardFooter>
         {project.link ? (
-          <Button variant="ghost" asChild className="group">
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              Try Now
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
+          project.link.startsWith('/') ? (
+            <Button variant="ghost" asChild className="group">
+              <Link to={project.link}>
+                {buttonText} 
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          ) : (
+            <Button variant="ghost" asChild className="group">
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                {buttonText} 
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          )
         ) : project.showContactModal && onContactRequest ? (
           <Button variant="ghost" className="group" onClick={onContactRequest}>
-            Learn More
+            {buttonText} 
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         ) : (

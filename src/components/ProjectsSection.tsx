@@ -9,20 +9,22 @@ const projects: ProjectProps[] = [
     longDescription: "Allowing users to gain access to all of the best models in one place.",
     tags: ["Next.js", "OpenAI API", "Anthropic API", "Google API", "Streaming", "Full Stack"],
     image: "/lovable-uploads/3c91d6ed-6297-4f0e-8742-3517ace7422f.png",
-    link: "https://youraigarden.com"
+    link: "https://youraigarden.com",
+    buttonText: "Try Now"
   },
   {
-    title: "Automation and Application Integrations",
-    description: "Automated lead capture for real estate",
-    longDescription: "An automated system that handles real-time communication about agents and listings, captures contact details, and notifies agents instantly via SMS.",
-    tags: ["n8n", "Automation", "Google Sheets API", "SMS Integration", "Lead Generation"],
+    title: "AI Automation and Application Integrations",
+    description: "Explore a range of AI-powered automation templates and integrations built with n8n and Make.",
+    longDescription: "Access pre-built JSON templates for instant use in your own automation projects.",
+    tags: ["n8n", "Make", "Automation", "Google Sheets API", "SMS Integration", "AI", "JSON"],
     image: "/lovable-uploads/75babce0-9875-4199-aa69-5c9477d273b0.png",
-    showContactModal: true
+    link: "/automations",
+    buttonText: "Explore Automations"
   },
   {
     title: "Natural Language SQL Query Tool",
-    description: "Convert human questions into SQL queries",
-    longDescription: "A system that converts a 33M-token dataset into a searchable SQL database connected to an LLM, allowing users to ask natural language questions.",
+    description: "NLP-Powered Big Data Querying",
+    longDescription: "An advanced system capable of processing large, complex datasets. Utilizes Natural Language Processing (NLP) to instantly convert user questions into precise SQL queries, unlocking insights from big data.",
     tags: ["SQL", "PostgreSQL", "LLM Integration", "Natural Language Processing", "Data Engineering"],
     image: "/lovable-uploads/2f6d7c5d-0c07-48c4-8245-cdcb384c1ad4.png",
     showContactModal: true
@@ -49,11 +51,11 @@ export function ProjectsSection() {
   return (
     <section 
       id="projects" 
-      className="section bg-muted/30 pt-24 pb-16 md:pt-32 md:pb-24 relative"
-      style={{
-        maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%)',
-      }}
+      className="section pt-48 pb-16 md:pt-64 md:pb-24 relative 
+                before:absolute before:inset-0 before:bg-muted/30 
+                before:-z-10 
+                before:[mask-image:linear-gradient(to_bottom,transparent_0%,black_25%)] 
+                before:[--webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_25%)]"
     >
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-12">
